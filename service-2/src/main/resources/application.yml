@@ -1,0 +1,27 @@
+
+server:
+  port: 8002
+  servlet:
+    context-path: /service2
+    session:
+      cookie:
+        name: oauth-service-2
+        path: /
+
+
+security:
+  oauth2:
+    client:
+      clientId: client_1
+      clientSecret: 123456
+      # 获取访问令牌的URI
+      accessTokenUri: http://localhost:8000/auth-server/oauth/token
+      # 将用户重定向到的授权URI
+      userAuthorizationUri: http://localhost:8000/auth-server/oauth/authorize
+    resource:
+      # 获取当前用户详细信息
+      userInfoUri: http://localhost:8000/auth-server/security/getUserInfo
+
+logging:
+  level:
+    com.shpun: debug

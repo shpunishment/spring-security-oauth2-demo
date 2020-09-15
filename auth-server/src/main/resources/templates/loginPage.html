@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Security OAuth Memory Test</title>
+</head>
+<body>
+
+<h1>login.html</h1>
+
+<p>权限 USER: user user</p>
+<p>权限 ADMIN: admin admin</p>
+
+<div th:if="${param.error}">
+    账号密码错误
+</div>
+<div th:if="${param.logout}">
+    你已登出
+</div>
+
+<form th:action="@{/login}" method="post">
+    <div><label> User Name : <input type="text" name="login_username"/></label></div>
+    <div><label> Password: <input type="password" name="login_password"/></label></div>
+    <div><input type="submit" value="登录"/></div>
+</form>
+
+</body>
+</html>

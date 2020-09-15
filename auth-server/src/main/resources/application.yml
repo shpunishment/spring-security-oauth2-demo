@@ -1,0 +1,43 @@
+
+server:
+  port: 8000
+  servlet:
+    context-path: /auth-server
+    session:
+      cookie:
+        name: oauth-auth-server
+        path: /
+
+spring:
+  redis:
+    # Redis默认情况下有16个分片，这里配置具体使用的分片，默认是0
+    database: 0
+    host: localhost
+    port: 6379
+    # 连接密码（默认为空）
+    password:
+    # 连接超时时间（毫秒)
+    timeout: 10000ms
+    lettuce:
+      pool:
+        # 连接池最大连接数（使用负值表示没有限制） 默认 8
+        max-active: 8
+        # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+        max-wait: -1
+        # 连接池中的最大空闲连接 默认 8
+        max-idle: 8
+        # 连接池中的最小空闲连接 默认 0
+        min-idle: 0
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:4306/spring-security-test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
+
+mybatis:
+  typeAliasesPackage: com.shpun.oauth.model
+  mapper-locations: classpath:mapper/**.xml
+
+logging:
+  level:
+    com.shpun: debug
