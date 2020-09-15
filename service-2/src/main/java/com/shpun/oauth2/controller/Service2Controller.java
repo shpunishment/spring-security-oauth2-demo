@@ -16,7 +16,7 @@ import java.security.Principal;
  * @Date: 2020/4/26 18:13
  */
 @Controller
-public class Service1Controller {
+public class Service2Controller {
 
     @RequestMapping(path = {"/", "/home"})
     public ModelAndView home() {

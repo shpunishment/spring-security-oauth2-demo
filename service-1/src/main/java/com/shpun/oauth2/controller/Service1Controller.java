@@ -38,8 +38,7 @@ public class Service1Controller {
     }
 
     /**
-     * 测试 /api/* 是否被资源服务器拦截，需要token
-     * @return
+     * /api 受资源服务器保护，验证token，请求时需要带上
      */
     @GetMapping("/api/getUserInfo")
     @ResponseBody
@@ -47,6 +46,9 @@ public class Service1Controller {
         return SecurityContextHolder.getContext().getAuthentication();
     }
 
+    /**
+     * /api2 受Spring Security保护，验证cookie和session，需要先通过登录
+     */
     @GetMapping("/api2/getUserInfo")
     @ResponseBody
     public Principal getUserInfo2() {

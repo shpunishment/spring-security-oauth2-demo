@@ -48,7 +48,7 @@ public class ServerWebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/static/js/**");
+                .antMatchers("/js/**");
     }
 
     /**

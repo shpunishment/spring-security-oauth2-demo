@@ -8,7 +8,6 @@ server:
         name: oauth-service-2
         path: /
 
-
 security:
   oauth2:
     client:
